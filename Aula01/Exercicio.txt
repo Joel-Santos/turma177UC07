@@ -1,0 +1,36 @@
+Exercício 1: Calculadora Simples
+Crie um programa chamado calculadora.js que:
+Receba dois números via argumentos da linha de comando.
+Realize as 4 operações básicas: adição (+), subtração (-), multiplicação (*) e divisão (/).
+Exiba os resultados formatados no console.
+Dica: use process.argv para capturar os argumentos.
+
+Exemplo de uso:
+node calculadora.js 15 3
+Saída esperada:
+=== Calculadora Simples ===
+15 + 3 = 18
+15 - 3 = 12
+15 * 3 = 45
+15 / 3 = 5
+
+Exercício 2: Informações de Arquivo
+Crie um programa chamado infoArquivo.js que:
+Receba o nome de um arquivo como parâmetro da linha de comando.
+Exiba informações sobre esse arquivo:
+Caminho absoluto
+Tamanho em bytes
+Data de criação
+Data da última modificação
+Se é um diretório ou um arquivo
+Dica: use os módulos fs e path do Node.js.
+Exemplo de uso:
+node infoArquivo.js calculadora.js
+Saída esperada:
+=== Informações do Arquivo ===
+Caminho absoluto: /home/usuario/projeto/calculadora.js
+Tamanho: 534 bytes
+Criado em: Mon Sep 30 2025 10:15:00 GMT-0300
+Modificado pela última vez em: Mon Sep 30 2025 10:18:22 GMT-0300
+É diretório? false
+É arquivo? true
