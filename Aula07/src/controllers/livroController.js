@@ -97,6 +97,8 @@ export default class LivroController {
     static buscarPorAutor(req, res){
         try {
             const autor = req.params.autor.toLowerCase();
+           // const autor = req.params.autor.replace(/%20/g, " ").toLowerCase();
+            console.log(autor)
             const livrosEncontrados = livros.filter(l => l.autor.toLowerCase().includes(autor));
             if(livrosEncontrados.length === 0){
                 res.status(404).json({msg: "Nenhum livro encontrado para esse autor."});
