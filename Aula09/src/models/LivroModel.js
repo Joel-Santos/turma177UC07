@@ -18,8 +18,8 @@ export default class LivroModel{
         livros.push(livro)
         return livro;
     }
-      static buscarPorAno(ano){
-        return livros.filter(l=> l.ano === parseInt(ano));
+    static buscarPorAno(ano){
+        return livros.filter(l=> l.anoPublicacao === parseInt(ano));
     }
     static atualizar(id, dados){
         const index = livros.findIndex(l=> l.id === Number(id));
@@ -37,11 +37,5 @@ export default class LivroModel{
         livros.splice(index, 1);
         return true;
     }
-
-
-
-
-
-
 
 }

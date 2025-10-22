@@ -33,7 +33,7 @@ static buscarPorNome(req, res){
             const nome = req.params.nome;
             const categorias = CategoriaModel.buscarPorNome(nome);
             if(categorias.length ===0){
-                res.status(400).json({msg: "Nenhuma categoria com essa nacionalidade!"});
+                res.status(400).json({msg: "Nenhuma categoria com esse nome!"});
                 return;
             }
             res.status(200).json(categorias);

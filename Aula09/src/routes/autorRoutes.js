@@ -8,6 +8,7 @@ router.get("/nacionalidade/:nacionalidade", AutorController.buscarPorNacionalida
 router.post("/", AutorController.criar);
 router.put("/:id", AutorController.atualizar);
 router.delete("/:id", AutorController.deletar);
+router.get("/nome/:nome", AutorController.buscarPorNome);
 
 
 export default router;
