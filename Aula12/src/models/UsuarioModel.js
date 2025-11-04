@@ -1,30 +1,42 @@
 import { usuarios } from "../data/banco.js";
 
-export default class UsuarioModel{
-    static listar(){
+export default class UsuarioModel {
+    static listar() {
         return usuarios;
     }
-    static buscarPorId(id){
-        return usuarios.find(u=> u.id === id);
+    static buscarPorId(id) {
+        return usuarios.find(u => u.id === id);
     }
-    static criar(usuario){
+    static criar(usuario) {
         usuarios.push(usuario);
         return usuario;
     }
-    static atualizar(id, novosDados){
-        const index = usuarios.findIndex(u=> u.id === id);
-        if(index === -1){
+    static atualizar(id, novosDados) {
+        const index = usuarios.findIndex(u => u.id === id);
+        if (index === -1) {
             return null;
         }
-        usuarios[index] = {...usuarios[index], ...novosDados};
+        usuarios[index] = { ...usuarios[index], ...novosDados };
         return usuarios[index];
     }
-    static deletar(id){
-         const index = usuarios.findIndex(u=> u.id === id);
-        if(index === -1){
+    //tem o mesmo funcionamento base do atualizar
+    static atualizarParcialmente(id, novosDados) {
+        const index = usuarios.findIndex(u => u.id === id);
+        if (index === -1) {
+            return null;
+        }
+        usuarios[index] = { ...usuarios[index], ...novosDados };
+        return usuarios[index];
+    }
+
+
+    static deletar(id) {
+        const index = usuarios.findIndex(u => u.id === id);
+        if (index === -1) {
             return false;
         }
         usuarios.splice(index, 1);
         return true;
     }
+
 }
