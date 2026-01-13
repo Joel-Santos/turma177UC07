@@ -19,5 +19,22 @@ export default class UsuarioModel{
             }
         )
     }
+    static async atualizar(id, dados){
+        return prisma.usuario.update(
+            {
+                where: {id: Number(id)},
+                data: dados
+            }
+        )
+    }
+    static async deletar(id){
+        return prisma.usuario.delete(
+            {
+                where: {id: Number(id)}
+            }
+        )
+    }
+
+    
 
 }

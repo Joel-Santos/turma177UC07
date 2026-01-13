@@ -3,6 +3,7 @@ import UsuarioController from "../controllers/UsuarioController.js"
 const router = express.Router();
 
 router.get("/", UsuarioController.listar);
+router.post("/", UsuarioController.criar);
 
 
 export default router;

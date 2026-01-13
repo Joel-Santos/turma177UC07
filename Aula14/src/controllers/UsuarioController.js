@@ -18,6 +18,25 @@ export default class UsuarioController{
                 }
             )
         }
+
+    }
+    static async criar(req, res){
+        try {
+            const {nome, email} = req.body;
+            if(!nome || !email){
+                res.status(400).json({msg: "Nome e email são obrigatórios"});
+                return
+            }
+            const novoUsuario = await UsuarioModel.criar({nome, email});
+            res.status(201).json({msg: "Usuário criado com sucesso", usuario: novoUsuario})
+        } catch (error) {
+            res.status(500).json(
+                {
+                    msg: "Erro ao criar usuário",
+                    erro: error.message
+                }
+            )
+        }  
     }
 
 
